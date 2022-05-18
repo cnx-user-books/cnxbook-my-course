@@ -1,0 +1,136 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml"> 
+
+  <title>Communication with Satellites</title>
+
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>72130804-5f3d-4660-b56b-a2666bc090e8</md:uuid>
+</metadata>
+
+  <content>
+
+    <para id="p1">
+      Global wireless communication relies on satellites.  Here,
+      ground stations transmit to orbiting satellites that amplify the
+      signal and retransmit it back to earth.  Satellites will move
+      across the sky unless they are in <term>geosynchronous
+      orbits</term>, where the time for one revolution about the
+      equator exactly matches the earth's rotation time of one day.
+      TV satellites would require the homeowner to continually adjust
+      his or her antenna if the satellite weren't in geosynchronous
+      orbit.  Newton's equations applied to orbiting bodies predict
+      that the time <m:math display="inline"><m:ci>T</m:ci></m:math>
+      for one orbit is related to distance from the earth's center
+      <m:math display="inline"><m:ci>R</m:ci></m:math> as
+      
+      <equation id="eq0001">
+	<m:math display="block">
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>R</m:ci>
+	    <m:apply>
+	      <m:root/>
+	      <m:degree><m:cn type="integer">3</m:cn></m:degree>
+	      <m:apply>
+		<m:divide/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>G</m:ci>
+		  <m:ci>M</m:ci>
+		  <m:apply>
+		    <m:power/>
+		    <m:ci>T</m:ci>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		</m:apply>
+		<m:apply>
+		  <m:times/>
+		  <m:cn>4</m:cn>
+		  <m:apply>
+		    <m:power/>
+		    <m:pi/>
+		    <m:cn>2</m:cn>
+		  </m:apply>
+		</m:apply>
+	      </m:apply>
+	    </m:apply>
+	  </m:apply>
+	</m:math>
+      </equation>
+
+      where <m:math display="inline"><m:ci>G</m:ci></m:math> is the
+      gravitational constant and <m:math display="inline"><m:ci>M</m:ci></m:math> the earth's mass.
+      Calculations yield
+
+      <m:math display="inline">
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>R</m:ci>
+	  <m:apply>
+	    <m:times/>
+	    <m:cn>42200</m:cn>
+	    <m:ci>km</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, which corresponds to an altitude of 
+      <m:math display="inline">
+	<m:apply>
+	  <m:times/>
+	  <m:cn>35700</m:cn>
+	  <m:ci>km</m:ci>
+	</m:apply>
+      </m:math>.  This altitude greatly exceeds that of the
+      ionosphere, requiring satellite transmitters to use frequencies
+      that pass through it.  Of great importance in satellite
+      communications is the transmission delay.  The time for
+      electromagnetic fields to propagate to a geosynchronous
+      satellite and return is 0.24 s, a significant delay.
+    </para>
+
+    <exercise id="exercise1">
+      <problem id="idm6147680">
+	<para id="prob1">
+	  In addition to delay, the propagation attenuation
+	  encountered in satellite communication far exceeds what
+	  occurs in ionospheric-mirror based communication.  Calculate
+	  the attenuation incurred by radiation going to the satellite
+	  (one-way loss) with that encountered by Marconi (total going
+	  up and down).  Note that the attenuation calculation in the
+	  ionospheric case, assuming the ionosphere acts like a
+	  perfect mirror, is not a straightforward application of the
+	  <link document="m0101" target-id="p2" strength="2">propagation
+	  loss formula</link>.
+	</para>
+      </problem>
+
+      <solution id="idp2302640">
+	<para id="sol1">
+	  Transmission to the satellite, known as the uplink,
+	  encounters inverse-square law power losses.  Reflecting off
+	  the ionosphere not only encounters the same loss, but twice.
+	  Reflection is the same as transmitting exactly what arrives,
+	  which means that the total loss is the <emphasis>product
+	  </emphasis>of the uplink and downlink losses.  The
+	  geosynchronous orbit lies at an altitude of
+	  <m:math display="inline">
+	    <m:apply>
+	      <m:times/>
+	      <m:cn>35700</m:cn>
+	      <m:ci>km</m:ci>
+	    </m:apply>
+	  </m:math>.  The ionosphere begins at an altitude of about
+	  50 km.  The amplitude loss in the satellite case is
+	  proportional to
+
+	  <m:math display="inline">
+	    <m:cn type="e-notation">2.8<m:sep/>-8</m:cn> </m:math>;
+	  for Marconi, it was proportional to
+	  
+	  <m:math display="inline">
+	    <m:cn type="e-notation">4.4<m:sep/>-10</m:cn>
+	  </m:math>.  
+	  Marconi was  <emphasis>very </emphasis>lucky.
+	</para>
+      </solution>
+    </exercise>
+
+  </content>
+</document>
